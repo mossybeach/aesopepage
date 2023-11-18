@@ -1,0 +1,36 @@
+{
+  "leftNav": [
+    {
+      "category": "스킨케어"
+    },
+    {
+      "category": "바디&핸드"
+    },
+    {
+      "category": "헤어"
+    },
+    {
+      "category": "홈케어"
+    },
+    {
+      "category": "키드&트래블"
+    },
+    {
+      "category": "기프트가이드"
+    },
+    {
+      "category": "이솝이야기"
+    }
+  ],
+  "rightNav": [
+    {
+      "category": "로그인"
+    },
+    {
+      "category": "위시리스트"
+    },
+    {
+      "category": "카트"
+    }
+  ]
+}
