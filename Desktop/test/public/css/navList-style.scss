@@ -1,0 +1,215 @@
+@font-face {
+  font-family: Regular;
+  src: url("../font/SuisseIntl-Regular-WebS.a55b96fd.woff2");
+}
+@font-face {
+  font-family: Medium;
+  src: url("../font/SuisseIntl-Medium-WebS.5ee1ad41.woff2");
+}
+
+$font-size: (
+  xsmall: 12px,
+  small: 14px,
+  base: 16px,
+  medium: 20px,
+  large: 24px,
+  xlarge: 32px,
+);
+$font-color: (
+  wh: #fff,
+  medium: #717171,
+  /*footer 폰트 컬러*/ dark: #383838,
+  /*light 버전 폰트 컬러*/ naklight: #b9ae91,
+  /*이거는 낙영언니 페이지 If the path 폰트  컬러*/ ask: #271100,
+  gnb : #e7ddc9,
+);
+
+//========= reset ===========
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+// story
+#wrap01 {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  background: map-get($font-color, gnb);
+  > img {
+    flex: 1;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  > .story_list {
+    flex: 4;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    > .list_sec {
+      display: flex;
+      flex-direction: row;
+      > h4 {
+        width: 25%;
+        text-align: right;
+        padding-top: 5px;
+        font-size: map-get($font-size, large);
+      }
+      > .list_sec_datail_list {
+        padding-left: 40px;
+        > li {
+          display: block;
+          line-height: 2em;
+          font-size: 20px;
+          color: map-get($font-color, dark);
+          a {
+            color: map-get($font-color, dark);
+            font-size: 20px;
+            position: relative;
+            &::before {
+              content: "";
+              width: 0%;  
+              height: 1px;
+              background: map-get($font-color, dark);
+              position: absolute;
+              bottom: 0;
+              transition: 0.5s;
+            }
+            &:hover::before {
+                width: 100%;
+              }
+          }
+        }
+      }
+    }
+  }
+}
+
+// kit
+#wrap02,
+#wrap03 {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  background: #e7ddc9;;
+  img{
+    &:nth-of-type(1) {
+      flex: 1;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    &:nth-of-type(2) {
+      position: absolute;
+      bottom: 0px;
+      right: 50px;
+    }
+  }
+  .kit_list {
+    height: 100%;
+    flex: 4;
+    display: flex;
+    gap: 50px;
+    padding: 50px 0 0 100px;
+    .list_sec {
+        width: 20%;
+        font-size: map-get($font-size, large);
+        h4 {
+          margin-bottom: 10px;
+        }
+      }
+      .list_sec_datail_list {
+        li {
+          a {
+            font-size: map-get($font-size, medium);
+            color: map-get($font-color, dark);
+            line-height: 2em;
+            position: relative;
+            &::before {
+              content: "";
+              width: 0%;
+              height: 1px;
+              background: map-get($font-color, dark );
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              transition: 0.5s;
+            }
+            &:hover::before {
+              width: 100%;
+            }
+          }
+        }
+      }
+  }
+  }
+
+  
+@media screen and (min-width: 768px) and (max-width:1200px) {
+  #wrap01 {
+    width: 100%;
+    height: 500px;
+    img {
+      height: 100%;
+    }
+    .story_list {
+      .list_sec {
+        h4 {
+          font-size: map-get($font-size, medium);
+          width: 220px;
+        }
+      }
+    }
+  }
+  
+  #wrap02 {
+    width: 100%;
+    img {
+      &:nth-of-type(2) {
+        width: 300px;
+      }
+    }
+    .kit_list {
+      gap: 50px;
+      .list_sec {
+        width: 60%;
+      }
+      h4 {
+        font-size: map-get($font-size, medium);
+      }
+    }
+  }
+
+  #wrap03 {
+    width: 100%;
+    img {
+      height: 100%;
+    }
+    .kit_list {
+      gap: 30px;
+      padding: 30px 0 0 50px;
+      .list_sec {
+        width: 60%;
+      }
+        h4 {
+          font-size: map-get($font-size, medium);
+        }
+    }
+  }
+}
