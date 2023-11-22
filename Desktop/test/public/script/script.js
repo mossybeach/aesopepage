@@ -136,7 +136,10 @@ const loadQuestion = () => {
         currentQuestion++;
         loadQuestion();
       } else {
+        document.querySelector(".quiz_quest").innerText = ""
         showResult();
+        optionsContainer.innerHTML= `<h2 class="resulth2">피부타입 진단이 완료되었습니다</h2>
+        <a href="#skinResult">결과 확인하기</a>`
       }
     };
     button.addEventListener("click", activate);
@@ -144,10 +147,6 @@ const loadQuestion = () => {
   });
 };
 
-function showResult() {
-  const result = evaluateResult(userAnswers);
-  resultElement.innerHTML = `<br> 당신의 피부타입은: ${result}입니다`;
-}
 
 function evaluateResult(userAnswers) {
   const scoring = {
@@ -211,7 +210,7 @@ function showResult() {
         });
         let contentsP = document.createElement("p");
         resultElement.appendChild(contentsP);
-        contentsP.innerText = output;
+        contentsP.innerHTML = output;
 
         let skinBtn = document.createElement("a");
         skinBtn.classList.add("on");
